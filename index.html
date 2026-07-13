@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Escala 70º BPM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="tela-login" class="centro">
+    <div class="cartao">
+      <h2>Escala 70º BPM</h2>
+      <p>Entre com sua conta Google para acessar.</p>
+      <button id="btn-entrar" class="google">Entrar com Google</button>
+      <p id="mensagem-erro" class="erro"></p>
+    </div>
+  </div>
+
+  <div id="tela-app" class="escondido">
+    <header>
+      <div class="barra-usuario">
+        <span id="info-usuario"></span>
+        <button id="btn-sair" class="sair">Sair</button>
+      </div>
+      <h1>Escala 70º BPM</h1>
+      <p>Login funcionando. Próxima etapa: grade da escala puxando do Firestore.</p>
+    </header>
+    <main>
+      <p>Se você está vendo esta tela, o login com Google está funcionando corretamente.</p>
+    </main>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

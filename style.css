@@ -1,0 +1,70 @@
+* { box-sizing: border-box; }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: #f2f4f7;
+  color: #1a1a1a;
+  min-height: 100vh;
+}
+header {
+  background: #1F4E78;
+  color: #fff;
+  padding: 16px 20px;
+}
+header h1 { margin: 0; font-size: 18px; }
+header p { margin: 2px 0 0; font-size: 12px; opacity: .85; }
+
+.escondido { display: none !important; }
+
+.centro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.cartao {
+  background: #fff;
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.1);
+  max-width: 360px;
+}
+
+button.google {
+  background: #1F4E78;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 16px;
+}
+button.google:hover { opacity: .9; }
+
+button.sair {
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.barra-usuario {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #163a5a;
+  color: #fff;
+  font-size: 13px;
+}
+
+.erro { color: #b84c4c; font-size: 13px; margin-top: 10px; }
+
+main { padding: 20px; }
