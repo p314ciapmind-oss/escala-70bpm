@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Escala 70º BPM</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
 </head>
 <body>
 
@@ -27,8 +28,108 @@
       <p>Militares sincronizados da planilha da P4/RH.</p>
     </header>
     <main>
+
+      <section class="dashboard">
+        <div class="kpis" id="kpis"></div>
+
+        <div class="grade-graficos">
+          <div class="cartao-grafico">
+            <h3>Efetivo por posto/graduação</h3>
+            <canvas id="grafico-posto"></canvas>
+          </div>
+          <div class="cartao-grafico">
+            <h3>Efetivo por município</h3>
+            <canvas id="grafico-municipio"></canvas>
+          </div>
+          <div class="cartao-grafico">
+            <h3>Efetivo por companhia/unidade</h3>
+            <canvas id="grafico-unidade"></canvas>
+          </div>
+          <div class="cartao-grafico">
+            <h3>Faixa etária</h3>
+            <canvas id="grafico-idade"></canvas>
+          </div>
+          <div class="cartao-grafico pequeno">
+            <h3>Sexo</h3>
+            <canvas id="grafico-sexo"></canvas>
+          </div>
+          <div class="cartao-grafico pequeno">
+            <h3>Raça/Cor</h3>
+            <canvas id="grafico-raca"></canvas>
+          </div>
+          <div class="cartao-grafico pequeno">
+            <h3>Estado civil</h3>
+            <canvas id="grafico-estadocivil"></canvas>
+          </div>
+          <div class="cartao-grafico pequeno">
+            <h3>Situação funcional</h3>
+            <canvas id="grafico-situacao"></canvas>
+          </div>
+          <div class="cartao-grafico pequeno">
+            <h3>Grau de instrução</h3>
+            <canvas id="grafico-instrucao"></canvas>
+          </div>
+          <div class="cartao-grafico">
+            <h3>Ingressos por ano (dataInclusao)</h3>
+            <canvas id="grafico-ingressos"></canvas>
+          </div>
+          <div class="cartao-grafico">
+            <h3>Tempo de serviço (anos)</h3>
+            <canvas id="grafico-tempoServico"></canvas>
+          </div>
+          <div class="cartao-grafico pequeno">
+            <h3>Quadro</h3>
+            <canvas id="grafico-quadro"></canvas>
+          </div>
+        </div>
+      </section>
+
       <div class="painel-militares">
-        <input type="text" id="busca-militar" placeholder="Buscar por nome, matrícula, posto/graduação ou unidade..." />
+        <h2 class="titulo-secao">Busca com filtros</h2>
+        <input type="text" id="busca-militar" placeholder="Buscar por nome ou matrícula..." />
+
+        <div class="filtros">
+          <select id="filtro-posto">
+            <option value="">Posto/Graduação: Todos</option>
+          </select>
+          <select id="filtro-municipio">
+            <option value="">Município: Todos</option>
+          </select>
+          <select id="filtro-unidade">
+            <option value="">Unidade: Todas</option>
+          </select>
+          <select id="filtro-situacao">
+            <option value="">Situação: Todas</option>
+          </select>
+          <select id="filtro-sexo">
+            <option value="">Sexo: Todos</option>
+          </select>
+          <select id="filtro-raca">
+            <option value="">Raça/Cor: Todas</option>
+          </select>
+          <select id="filtro-estadocivil">
+            <option value="">Estado civil: Todos</option>
+          </select>
+          <select id="filtro-instrucao">
+            <option value="">Grau de instrução: Todos</option>
+          </select>
+          <select id="filtro-quadro">
+            <option value="">Quadro: Todos</option>
+          </select>
+          <select id="filtro-atividade">
+            <option value="">Tipo de atividade: Todas</option>
+          </select>
+          <select id="filtro-ativoinativo">
+            <option value="">Ativo/Inativo: Todos</option>
+          </select>
+          <button type="button" id="btn-limpar-filtros">Limpar filtros</button>
+        </div>
+
+        <div class="filtro-categoria">
+          <span>Categoria de CNH/Credenciamento (pode marcar mais de uma):</span>
+          <div id="filtro-categoria-cred" class="checkboxes"></div>
+        </div>
+
         <p id="status-militares" class="status"></p>
         <div class="tabela-scroll">
           <table>
