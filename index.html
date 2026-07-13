@@ -24,10 +24,27 @@
         <button id="btn-sair" class="sair">Sair</button>
       </div>
       <h1>Escala 70º BPM</h1>
-      <p>Login funcionando. Próxima etapa: grade da escala puxando do Firestore.</p>
+      <p>Militares sincronizados da planilha da P4/RH.</p>
     </header>
     <main>
-      <p>Se você está vendo esta tela, o login com Google está funcionando corretamente.</p>
+      <div class="painel-militares">
+        <input type="text" id="busca-militar" placeholder="Buscar por nome, matrícula, posto/graduação ou unidade..." />
+        <p id="status-militares" class="status"></p>
+        <div class="tabela-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Matrícula</th>
+                <th>Nome</th>
+                <th>Posto/Graduação</th>
+                <th>Unidade</th>
+                <th>Situação</th>
+              </tr>
+            </thead>
+            <tbody id="corpo-tabela-militares"></tbody>
+          </table>
+        </div>
+      </div>
     </main>
   </div>
 
